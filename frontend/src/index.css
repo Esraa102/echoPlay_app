@@ -1,3 +1,66 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .input-container {
+    @apply flex gap-2 p-3 rounded-md bg-[#0d052c] border-2 border-[#1200ff];
+  }
+  .input {
+    @apply flex-1 text-lg text-white bg-transparent border-none outline-none;
+  }
+  .error-message {
+    @apply -mt-5 flex gap-1 items-center px-4 font-medium text-red-700;
+  }
+  .main-btn {
+    @apply text-xl rounded-md bg-[#1200ff] hover:opacity-60 transition flex-1 py-3 font-semibold;
+  }
+  .verify-input {
+    @apply border bg-[#050522] focus:border-2 border-gray-800 outline-none focus:border-[#1200ff] w-1/6 py-4 rounded-md text-center text-3xl font-semibold px-2;
+  }
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 100px;
+  aspect-ratio: 1;
+  padding: 10px;
+  box-sizing: border-box;
+  display: grid;
+  background: transparent;
+}
+.loader:before {
+  content: "";
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #1200ff;
+  background: currentColor;
+  box-shadow: -30px 0, 30px 0, 0 30px, 0 -30px;
+  -webkit-animation: l6 1s infinite alternate;
+  animation: l6 1s infinite alternate;
+}
+@-webkit-keyframes l6 {
+  90%,
+  100% {
+    box-shadow: -10px 0, 10px 0, 0 10px, 0 -10px;
+    transform: rotate(180deg);
+  }
+}
+@keyframes l6 {
+  90%,
+  100% {
+    box-shadow: -10px 0, 10px 0, 0 10px, 0 -10px;
+    transform: rotate(180deg);
+  }
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: #0d052c;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #1200ff;
+  border-radius: 10px;
+}

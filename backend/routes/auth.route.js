@@ -15,7 +15,7 @@ import { verifyToken } from "../middleware/verifyToken.js";
 const router = express.Router();
 router.post("/signup", signup);
 router.post("/verify-email", verifyEmail);
-router.post("resend-code", reSendVerifyCode);
+router.post("/resend-code", reSendVerifyCode);
 router.post("/forgot-password", forgotPassword);
 router.post("/reset-password/:token", resetPassword);
 router.post("/login", login);
